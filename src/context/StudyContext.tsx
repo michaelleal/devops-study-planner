@@ -124,6 +124,23 @@ export const StudyProvider: React.FC<{ children: React.ReactNode }> = ({
     )
   }
 
+  const updateLessonStatus = (
+    phaseId: string,
+    topicId: string,
+    courseId: string,
+    moduleId: string,
+    lessonId: string,
+    completed: boolean,
+  ) => {
+    // For now, this is a placeholder. Real implementation would need
+    // lesson tracking in the data structure
+    console.log('updateLessonStatus called:', { phaseId, topicId, courseId, moduleId, lessonId, completed })
+  }
+
+  const updateQuizCompletion = (phaseId: string, topicId: string, courseId: string, completed: boolean) => {
+    updateCourseStatus(phaseId, topicId, courseId, completed)
+  }
+
   const getProgressPercentage = (phaseId?: string): number => {
     const targetPhases = phaseId ? phases.filter((p) => p.id === phaseId) : phases
     const allTopics = targetPhases.flatMap((p) => p.topics)
@@ -160,6 +177,8 @@ export const StudyProvider: React.FC<{ children: React.ReactNode }> = ({
     updateTopicStatus,
     updateTopicNotes,
     updateCourseStatus,
+    updateLessonStatus,
+    updateQuizCompletion,
     getProgressPercentage,
     getTotalProgress,
     getPhaseLockedStatus,
