@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { Topic } from '../types'
 import { useStudy } from '../context/StudyContext'
+import { CourseList } from './CourseList'
 
 interface TopicCardProps {
   phaseId: string
@@ -35,6 +36,8 @@ export const TopicCard = ({ phaseId, topic }: TopicCardProps) => {
     setIsEditingNotes(false)
   }
 
+  const completedCourses = topic.courses.filter((c) => c.completed).length
+
   return (
     <div className="border border-gray-200 rounded-lg p-4 hover:shadow-md transition-shadow bg-white">
       <div className="flex items-start justify-between mb-2">
@@ -43,6 +46,13 @@ export const TopicCard = ({ phaseId, topic }: TopicCardProps) => {
           <p className="text-xs text-gray-500 mt-1">{topic.description}</p>
         </div>
       </div>
+
+      {/* XP Badge */}
+      {topic.status === 'completed' && (
+        <div className="inline-block bg-yellow-100 text-yellow-800 text-xs px-2 py-1 rounded mb-2">
+          ⭐ +{topic.xp} XP
+        </div>
+      )}
 
       <div className="flex flex-wrap gap-2 mt-3 items-center justify-between">
         <div className="flex gap-1">
@@ -68,6 +78,9 @@ export const TopicCard = ({ phaseId, topic }: TopicCardProps) => {
           📝 Notas
         </button>
       </div>
+
+      {/* Cursos */}
+      <CourseList phaseId={phaseId} topicId={topic.id} courses={topic.courses} />
 
       {isEditingNotes && (
         <div className="mt-3 pt-3 border-t border-gray-200">

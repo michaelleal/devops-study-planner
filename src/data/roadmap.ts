@@ -6,6 +6,8 @@ export const roadmapData: Phase[] = [
     title: '🏗️ Fundamentos DevOps',
     description: 'Conceitos básicos, Linux, Networking, Git',
     color: 'bg-blue-500',
+    isLocked: false,
+    requiredProgress: 0,
     topics: [
       {
         id: 'linux-basics',
@@ -13,6 +15,12 @@ export const roadmapData: Phase[] = [
         description: 'Sistema de arquivos, permissões, shell scripting',
         status: 'not-started',
         notes: '',
+        xp: 100,
+        courses: [
+          { id: 'c1', title: 'Linux Fundamentals - YouTube', url: 'https://www.youtube.com/results?search_query=linux+fundamentals', type: 'video', completed: false },
+          { id: 'c2', title: 'Linux Command Line Basics', url: 'https://linuxcommand.org/', type: 'article', completed: false },
+          { id: 'c3', title: 'The Linux Command Line - Book', url: 'https://linuxcommand.org/tlcl.php', type: 'book', completed: false },
+        ],
       },
       {
         id: 'networking',
@@ -20,6 +28,11 @@ export const roadmapData: Phase[] = [
         description: 'TCP/IP, DNS, HTTP/HTTPS, ports, firewalls',
         status: 'not-started',
         notes: '',
+        xp: 100,
+        courses: [
+          { id: 'c1', title: 'Networking Essentials - Cisco', url: 'https://www.cisco.com/c/en/us/training-events/training-certifications/certifications/entry-level-certifications/ccent.html', type: 'course', completed: false },
+          { id: 'c2', title: 'TCP/IP Fundamentals', url: 'https://www.youtube.com/results?search_query=tcpip+fundamentals', type: 'video', completed: false },
+        ],
       },
       {
         id: 'git',
@@ -27,6 +40,11 @@ export const roadmapData: Phase[] = [
         description: 'Commits, branches, merging, GitHub/GitLab',
         status: 'not-started',
         notes: '',
+        xp: 80,
+        courses: [
+          { id: 'c1', title: 'Git & GitHub - freeCodeCamp', url: 'https://www.youtube.com/results?search_query=git+github+freecodecamp', type: 'video', completed: false },
+          { id: 'c2', title: 'Pro Git Book', url: 'https://git-scm.com/book/en/v2', type: 'book', completed: false },
+        ],
       },
       {
         id: 'yaml-json',
@@ -34,6 +52,11 @@ export const roadmapData: Phase[] = [
         description: 'Serialization formats para configurações',
         status: 'not-started',
         notes: '',
+        xp: 60,
+        courses: [
+          { id: 'c1', title: 'YAML Tutorial', url: 'https://www.youtube.com/results?search_query=yaml+tutorial', type: 'video', completed: false },
+          { id: 'c2', title: 'JSON Documentation', url: 'https://www.json.org/', type: 'article', completed: false },
+        ],
       },
     ],
   },
@@ -42,6 +65,8 @@ export const roadmapData: Phase[] = [
     title: '💻 Servidores & Web Servers',
     description: 'Apache, Nginx, reverse proxy, load balancing',
     color: 'bg-purple-500',
+    isLocked: true,
+    requiredProgress: 60,
     topics: [
       {
         id: 'web-servers',
@@ -49,6 +74,11 @@ export const roadmapData: Phase[] = [
         description: 'Configuração, virtual hosts, SSL/TLS',
         status: 'not-started',
         notes: '',
+        xp: 100,
+        courses: [
+          { id: 'c1', title: 'Nginx Tutorial', url: 'https://www.youtube.com/results?search_query=nginx+tutorial', type: 'video', completed: false },
+          { id: 'c2', title: 'Apache Web Server Course', url: 'https://www.youtube.com/results?search_query=apache+web+server', type: 'course', completed: false },
+        ],
       },
       {
         id: 'reverse-proxy',
@@ -56,6 +86,10 @@ export const roadmapData: Phase[] = [
         description: 'Nginx load balancing, HAProxy',
         status: 'not-started',
         notes: '',
+        xp: 110,
+        courses: [
+          { id: 'c1', title: 'Load Balancing Concepts', url: 'https://www.youtube.com/results?search_query=load+balancing', type: 'video', completed: false },
+        ],
       },
       {
         id: 'application-servers',
@@ -63,6 +97,10 @@ export const roadmapData: Phase[] = [
         description: 'Tomcat, Gunicorn, Node.js servers',
         status: 'not-started',
         notes: '',
+        xp: 90,
+        courses: [
+          { id: 'c1', title: 'Node.js Web Server', url: 'https://nodejs.org/en/docs/', type: 'article', completed: false },
+        ],
       },
     ],
   },
@@ -71,6 +109,8 @@ export const roadmapData: Phase[] = [
     title: '🐳 Containers & Docker',
     description: 'Docker, containerização, registries',
     color: 'bg-cyan-500',
+    isLocked: true,
+    requiredProgress: 70,
     topics: [
       {
         id: 'docker-fundamentals',
@@ -78,6 +118,12 @@ export const roadmapData: Phase[] = [
         description: 'Imagens, containers, Dockerfile',
         status: 'not-started',
         notes: '',
+        xp: 120,
+        courses: [
+          { id: 'c1', title: 'Docker for Beginners', url: 'https://www.youtube.com/results?search_query=docker+beginners', type: 'video', completed: false },
+          { id: 'c2', title: 'Docker Official Documentation', url: 'https://docs.docker.com/', type: 'article', completed: false },
+          { id: 'c3', title: 'Docker Hands-on Project', url: 'https://www.docker.com/blog/getting-started/', type: 'project', completed: false },
+        ],
       },
       {
         id: 'docker-compose',
@@ -85,6 +131,10 @@ export const roadmapData: Phase[] = [
         description: 'Multi-container applications',
         status: 'not-started',
         notes: '',
+        xp: 110,
+        courses: [
+          { id: 'c1', title: 'Docker Compose Tutorial', url: 'https://www.youtube.com/results?search_query=docker+compose+tutorial', type: 'video', completed: false },
+        ],
       },
       {
         id: 'container-registry',
@@ -92,6 +142,10 @@ export const roadmapData: Phase[] = [
         description: 'Docker Hub, ECR, Harbor',
         status: 'not-started',
         notes: '',
+        xp: 100,
+        courses: [
+          { id: 'c1', title: 'Docker Hub Guide', url: 'https://docs.docker.com/docker-hub/', type: 'article', completed: false },
+        ],
       },
       {
         id: 'container-security',
@@ -99,6 +153,10 @@ export const roadmapData: Phase[] = [
         description: 'Image scanning, runtime security',
         status: 'not-started',
         notes: '',
+        xp: 130,
+        courses: [
+          { id: 'c1', title: 'Container Security Best Practices', url: 'https://www.youtube.com/results?search_query=container+security', type: 'video', completed: false },
+        ],
       },
     ],
   },
@@ -107,6 +165,8 @@ export const roadmapData: Phase[] = [
     title: '⚙️ CI/CD',
     description: 'Pipelines, GitHub Actions, Jenkins, GitLab CI',
     color: 'bg-orange-500',
+    isLocked: true,
+    requiredProgress: 70,
     topics: [
       {
         id: 'cicd-concepts',
@@ -114,6 +174,10 @@ export const roadmapData: Phase[] = [
         description: 'Integração contínua, deployment automático',
         status: 'not-started',
         notes: '',
+        xp: 100,
+        courses: [
+          { id: 'c1', title: 'CI/CD Explained', url: 'https://www.youtube.com/results?search_query=cicd+explained', type: 'video', completed: false },
+        ],
       },
       {
         id: 'github-actions',
@@ -121,6 +185,10 @@ export const roadmapData: Phase[] = [
         description: 'Workflows, actions, pipelines',
         status: 'not-started',
         notes: '',
+        xp: 110,
+        courses: [
+          { id: 'c1', title: 'GitHub Actions Tutorial', url: 'https://docs.github.com/en/actions', type: 'article', completed: false },
+        ],
       },
       {
         id: 'jenkins',
@@ -128,6 +196,10 @@ export const roadmapData: Phase[] = [
         description: 'Pipelines, plugins, automation',
         status: 'not-started',
         notes: '',
+        xp: 140,
+        courses: [
+          { id: 'c1', title: 'Jenkins Complete Guide', url: 'https://www.youtube.com/results?search_query=jenkins+tutorial', type: 'video', completed: false },
+        ],
       },
       {
         id: 'gitlab-ci',
@@ -135,6 +207,10 @@ export const roadmapData: Phase[] = [
         description: 'Gitlab-ci.yml, runners, pipelines',
         status: 'not-started',
         notes: '',
+        xp: 120,
+        courses: [
+          { id: 'c1', title: 'GitLab CI/CD Documentation', url: 'https://docs.gitlab.com/ee/ci/', type: 'article', completed: false },
+        ],
       },
       {
         id: 'testing',
@@ -142,6 +218,10 @@ export const roadmapData: Phase[] = [
         description: 'Unit tests, integration tests, coverage',
         status: 'not-started',
         notes: '',
+        xp: 130,
+        courses: [
+          { id: 'c1', title: 'Testing Best Practices', url: 'https://www.youtube.com/results?search_query=testing+best+practices', type: 'video', completed: false },
+        ],
       },
     ],
   },
@@ -150,6 +230,8 @@ export const roadmapData: Phase[] = [
     title: '☁️ Cloud Platforms',
     description: 'AWS, Azure, GCP, cloud services',
     color: 'bg-pink-500',
+    isLocked: true,
+    requiredProgress: 80,
     topics: [
       {
         id: 'aws-fundamentals',
@@ -157,6 +239,11 @@ export const roadmapData: Phase[] = [
         description: 'EC2, S3, RDS, VPC, IAM',
         status: 'not-started',
         notes: '',
+        xp: 150,
+        courses: [
+          { id: 'c1', title: 'AWS for Beginners', url: 'https://www.youtube.com/results?search_query=aws+for+beginners', type: 'video', completed: false },
+          { id: 'c2', title: 'AWS Free Tier Account', url: 'https://aws.amazon.com/free/', type: 'article', completed: false },
+        ],
       },
       {
         id: 'azure-fundamentals',
@@ -164,6 +251,10 @@ export const roadmapData: Phase[] = [
         description: 'VMs, App Service, SQL Database',
         status: 'not-started',
         notes: '',
+        xp: 140,
+        courses: [
+          { id: 'c1', title: 'Azure Basics', url: 'https://www.youtube.com/results?search_query=azure+basics', type: 'video', completed: false },
+        ],
       },
       {
         id: 'gcp-fundamentals',
@@ -171,6 +262,10 @@ export const roadmapData: Phase[] = [
         description: 'Compute Engine, Cloud Storage, BigQuery',
         status: 'not-started',
         notes: '',
+        xp: 140,
+        courses: [
+          { id: 'c1', title: 'GCP Getting Started', url: 'https://www.youtube.com/results?search_query=gcp+getting+started', type: 'video', completed: false },
+        ],
       },
       {
         id: 'serverless',
@@ -178,6 +273,10 @@ export const roadmapData: Phase[] = [
         description: 'Lambda, Cloud Functions, API Gateway',
         status: 'not-started',
         notes: '',
+        xp: 130,
+        courses: [
+          { id: 'c1', title: 'Serverless Computing', url: 'https://www.youtube.com/results?search_query=serverless+computing', type: 'video', completed: false },
+        ],
       },
     ],
   },
@@ -186,6 +285,8 @@ export const roadmapData: Phase[] = [
     title: '📝 Infrastructure as Code',
     description: 'Terraform, Ansible, CloudFormation',
     color: 'bg-green-500',
+    isLocked: true,
+    requiredProgress: 80,
     topics: [
       {
         id: 'terraform',
@@ -193,6 +294,11 @@ export const roadmapData: Phase[] = [
         description: 'HCL, resources, modules, state management',
         status: 'not-started',
         notes: '',
+        xp: 150,
+        courses: [
+          { id: 'c1', title: 'Terraform Tutorial', url: 'https://www.terraform.io/language', type: 'article', completed: false },
+          { id: 'c2', title: 'Terraform YouTube Course', url: 'https://www.youtube.com/results?search_query=terraform+tutorial', type: 'video', completed: false },
+        ],
       },
       {
         id: 'ansible',
@@ -200,6 +306,10 @@ export const roadmapData: Phase[] = [
         description: 'Playbooks, roles, inventory',
         status: 'not-started',
         notes: '',
+        xp: 140,
+        courses: [
+          { id: 'c1', title: 'Ansible for Beginners', url: 'https://www.youtube.com/results?search_query=ansible+tutorial', type: 'video', completed: false },
+        ],
       },
       {
         id: 'cloudformation',
@@ -207,6 +317,10 @@ export const roadmapData: Phase[] = [
         description: 'Templates, stacks, parameters',
         status: 'not-started',
         notes: '',
+        xp: 130,
+        courses: [
+          { id: 'c1', title: 'CloudFormation Guide', url: 'https://docs.aws.amazon.com/cloudformation/', type: 'article', completed: false },
+        ],
       },
       {
         id: 'pulumi',
@@ -214,6 +328,10 @@ export const roadmapData: Phase[] = [
         description: 'Infrastructure as code with Python/Go/TS',
         status: 'not-started',
         notes: '',
+        xp: 120,
+        courses: [
+          { id: 'c1', title: 'Pulumi Getting Started', url: 'https://www.pulumi.com/docs/', type: 'article', completed: false },
+        ],
       },
     ],
   },
@@ -222,6 +340,8 @@ export const roadmapData: Phase[] = [
     title: '⚡ Kubernetes',
     description: 'K8s, deployments, services, helm',
     color: 'bg-yellow-500',
+    isLocked: true,
+    requiredProgress: 85,
     topics: [
       {
         id: 'k8s-fundamentals',
@@ -229,6 +349,11 @@ export const roadmapData: Phase[] = [
         description: 'Pods, nodes, deployments, services',
         status: 'not-started',
         notes: '',
+        xp: 160,
+        courses: [
+          { id: 'c1', title: 'Kubernetes for Beginners', url: 'https://kubernetes.io/docs/tutorials/kubernetes-basics/', type: 'article', completed: false },
+          { id: 'c2', title: 'K8s YouTube Course', url: 'https://www.youtube.com/results?search_query=kubernetes+tutorial', type: 'video', completed: false },
+        ],
       },
       {
         id: 'k8s-networking',
@@ -236,6 +361,10 @@ export const roadmapData: Phase[] = [
         description: 'Network policies, ingress, DNS',
         status: 'not-started',
         notes: '',
+        xp: 150,
+        courses: [
+          { id: 'c1', title: 'K8s Networking Guide', url: 'https://kubernetes.io/docs/concepts/services-networking/', type: 'article', completed: false },
+        ],
       },
       {
         id: 'k8s-storage',
@@ -243,6 +372,10 @@ export const roadmapData: Phase[] = [
         description: 'PVC, volumes, StatefulSets',
         status: 'not-started',
         notes: '',
+        xp: 140,
+        courses: [
+          { id: 'c1', title: 'K8s Storage Concepts', url: 'https://kubernetes.io/docs/concepts/storage/', type: 'article', completed: false },
+        ],
       },
       {
         id: 'helm',
@@ -250,6 +383,10 @@ export const roadmapData: Phase[] = [
         description: 'Package manager, charts, repositories',
         status: 'not-started',
         notes: '',
+        xp: 130,
+        courses: [
+          { id: 'c1', title: 'Helm Tutorial', url: 'https://helm.sh/docs/', type: 'article', completed: false },
+        ],
       },
       {
         id: 'k8s-operators',
@@ -257,6 +394,10 @@ export const roadmapData: Phase[] = [
         description: 'Custom resources, automation',
         status: 'not-started',
         notes: '',
+        xp: 150,
+        courses: [
+          { id: 'c1', title: 'K8s Operators Guide', url: 'https://kubernetes.io/docs/concepts/extend-kubernetes/operator/', type: 'article', completed: false },
+        ],
       },
     ],
   },
@@ -265,6 +406,8 @@ export const roadmapData: Phase[] = [
     title: '📊 Observability & Monitoring',
     description: 'Prometheus, Grafana, ELK, logging',
     color: 'bg-red-500',
+    isLocked: true,
+    requiredProgress: 85,
     topics: [
       {
         id: 'logging',
@@ -272,6 +415,10 @@ export const roadmapData: Phase[] = [
         description: 'ELK Stack, Splunk, Loki',
         status: 'not-started',
         notes: '',
+        xp: 140,
+        courses: [
+          { id: 'c1', title: 'ELK Stack Tutorial', url: 'https://www.youtube.com/results?search_query=elk+stack+tutorial', type: 'video', completed: false },
+        ],
       },
       {
         id: 'metrics',
@@ -279,6 +426,10 @@ export const roadmapData: Phase[] = [
         description: 'Prometheus, Grafana, InfluxDB',
         status: 'not-started',
         notes: '',
+        xp: 150,
+        courses: [
+          { id: 'c1', title: 'Prometheus & Grafana Guide', url: 'https://www.youtube.com/results?search_query=prometheus+grafana', type: 'video', completed: false },
+        ],
       },
       {
         id: 'tracing',
@@ -286,6 +437,10 @@ export const roadmapData: Phase[] = [
         description: 'Jaeger, Zipkin, Datadog',
         status: 'not-started',
         notes: '',
+        xp: 140,
+        courses: [
+          { id: 'c1', title: 'Distributed Tracing Concepts', url: 'https://www.youtube.com/results?search_query=distributed+tracing', type: 'video', completed: false },
+        ],
       },
       {
         id: 'alerting',
@@ -293,6 +448,10 @@ export const roadmapData: Phase[] = [
         description: 'Alert rules, on-call, incident response',
         status: 'not-started',
         notes: '',
+        xp: 130,
+        courses: [
+          { id: 'c1', title: 'Alert Management Best Practices', url: 'https://www.youtube.com/results?search_query=alert+management', type: 'video', completed: false },
+        ],
       },
     ],
   },
@@ -301,6 +460,8 @@ export const roadmapData: Phase[] = [
     title: '🚀 Advanced Topics',
     description: 'Service mesh, security, best practices',
     color: 'bg-indigo-500',
+    isLocked: true,
+    requiredProgress: 90,
     topics: [
       {
         id: 'service-mesh',
@@ -308,6 +469,10 @@ export const roadmapData: Phase[] = [
         description: 'Istio, Linkerd, traffic management',
         status: 'not-started',
         notes: '',
+        xp: 160,
+        courses: [
+          { id: 'c1', title: 'Istio Service Mesh', url: 'https://www.youtube.com/results?search_query=istio+service+mesh', type: 'video', completed: false },
+        ],
       },
       {
         id: 'devops-security',
@@ -315,6 +480,10 @@ export const roadmapData: Phase[] = [
         description: 'Secret management, SIEM, compliance',
         status: 'not-started',
         notes: '',
+        xp: 170,
+        courses: [
+          { id: 'c1', title: 'DevSecOps Fundamentals', url: 'https://www.youtube.com/results?search_query=devsecops', type: 'video', completed: false },
+        ],
       },
       {
         id: 'cost-optimization',
@@ -322,6 +491,10 @@ export const roadmapData: Phase[] = [
         description: 'Resource optimization, cost monitoring',
         status: 'not-started',
         notes: '',
+        xp: 140,
+        courses: [
+          { id: 'c1', title: 'Cloud Cost Optimization', url: 'https://www.youtube.com/results?search_query=cloud+cost+optimization', type: 'video', completed: false },
+        ],
       },
       {
         id: 'disaster-recovery',
@@ -329,6 +502,10 @@ export const roadmapData: Phase[] = [
         description: 'Backup, replication, failover',
         status: 'not-started',
         notes: '',
+        xp: 160,
+        courses: [
+          { id: 'c1', title: 'Disaster Recovery Planning', url: 'https://www.youtube.com/results?search_query=disaster+recovery', type: 'video', completed: false },
+        ],
       },
     ],
   },
