@@ -10,6 +10,17 @@ export const roadmapData: Phase[] = [
     requiredProgress: 0,
     topics: [
       {
+        id: 'python-basics',
+        title: 'Aprender Python',
+        description: 'Fundamentos de Python para automação e scripts',
+        status: 'not-started',
+        notes: '',
+        xp: 120,
+        courses: [
+          { id: 'c1', title: 'Python Basics for Beginners', url: 'https://roadmap.sh/ai/course/python-basics-for-beginners-1770345039878', type: 'course', completed: false },
+        ],
+      },
+      {
         id: 'linux-basics',
         title: 'Linux Basics',
         description: 'Sistema de arquivos, permissões, shell scripting',
