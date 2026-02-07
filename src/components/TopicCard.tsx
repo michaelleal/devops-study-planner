@@ -3,6 +3,7 @@ import { Topic } from '../types'
 import { useStudy } from '../context/StudyContext'
 import { CourseList } from './CourseList'
 import { LessonViewer } from './LessonViewer'
+import { pythonModules, pythonQuiz } from '../data/pythonCourse'
 
 interface TopicCardProps {
   phaseId: string
@@ -42,9 +43,6 @@ export const TopicCard = ({ phaseId, topic }: TopicCardProps) => {
   const hasCourseModules = topic.id === 'python-basics'
 
   if (showLessons && hasCourseModules) {
-    const pythonModules = require('../data/pythonCourse').pythonModules
-    const pythonQuiz = require('../data/pythonCourse').pythonQuiz
-
     return (
       <div className="border border-gray-200 rounded-lg p-4 bg-white">
         <button
