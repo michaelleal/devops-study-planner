@@ -1,9 +1,8 @@
 import { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 import { Topic } from '../types'
 import { useStudy } from '../context/StudyContext'
 import { CourseList } from './CourseList'
-import { LessonViewer } from './LessonViewer'
-import { pythonModules, pythonQuiz } from '../data/pythonCourse'
 
 interface TopicCardProps {
   phaseId: string
@@ -11,10 +10,16 @@ interface TopicCardProps {
 }
 
 export const TopicCard = ({ phaseId, topic }: TopicCardProps) => {
-  const { updateTopicStatus, updateTopicNotes, updateQuizCompletion } = useStudy()
+  const navigate = useNavigate()
+  const { updateTopicStatus, updateTopicNotes } = useStudy()
   const [isEditingNotes, setIsEditingNotes] = useState(false)
   const [notes, setNotes] = useState(topic.notes)
-  const [showLessons, setShowLessons] = useState(false)
+
+  const hasCourseModules = topic.id === 'python-basics'
+
+  const handleOpenLessons = () => {
+    navigate(`/course/${topic.id}`)
+  }
 
   const statusColors = {
     'not-started': 'bg-gray-100 text-gray-700 border-gray-300',
@@ -40,29 +45,6 @@ export const TopicCard = ({ phaseId, topic }: TopicCardProps) => {
   }
 
   const completedCourses = topic.courses.filter((c) => c.completed).length
-  const hasCourseModules = topic.id === 'python-basics'
-
-  if (showLessons && hasCourseModules) {
-    return (
-      <div className="border border-gray-200 rounded-lg p-4 bg-white">
-        <button
-          onClick={() => setShowLessons(false)}
-          className="mb-4 px-3 py-1 text-sm text-blue-600 hover:bg-blue-50 rounded transition-colors"
-        >
-          ← Voltar
-        </button>
-        <LessonViewer
-          modules={pythonModules}
-          quiz={pythonQuiz}
-          onQuizComplete={() => {
-            updateQuizCompletion(phaseId, topic.id, 'python-course', true)
-            updateTopicStatus(phaseId, topic.id, 'completed')
-            setShowLessons(false)
-          }}
-        />
-      </div>
-    )
-  }
 
   return (
     <div className="border border-gray-200 rounded-lg p-4 hover:shadow-md transition-shadow bg-white">
@@ -100,7 +82,7 @@ export const TopicCard = ({ phaseId, topic }: TopicCardProps) => {
         <div className="flex gap-2">
           {hasCourseModules && (
             <button
-              onClick={() => setShowLessons(true)}
+              onClick={handleOpenLessons}
               className="px-2 py-1 text-xs text-white bg-purple-600 hover:bg-purple-700 rounded transition-colors font-semibold"
             >
               📚 Aulas
