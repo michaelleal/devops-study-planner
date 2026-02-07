@@ -32,7 +32,7 @@ export const CoursePage = () => {
           <h1 className="text-2xl font-bold text-gray-900 mb-4">Curso não encontrado</h1>
           <button
             onClick={() => navigate('/')}
-            className="px-6 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
+            className="px-6 py-3 bg-blue-600 text-white rounded-xl hover:bg-blue-700 transition-smooth font-semibold"
           >
             ← Voltar para Home
           </button>
@@ -42,11 +42,11 @@ export const CoursePage = () => {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-gray-50 to-gray-100">
+    <div className="min-h-screen bg-gradient-to-b from-blue-50 to-purple-50">
       <div className="max-w-4xl mx-auto px-4 py-8">
         <button
           onClick={() => navigate('/')}
-          className="mb-6 px-4 py-2 text-blue-600 hover:bg-blue-50 rounded-lg transition-colors font-semibold flex items-center gap-2"
+          className="mb-8 px-4 py-2 text-blue-600 hover:bg-blue-100 rounded-xl transition-smooth font-semibold flex items-center gap-2 hover:scale-105"
         >
           ← Voltar para Dashboard
         </button>
