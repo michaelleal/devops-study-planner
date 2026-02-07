@@ -122,7 +122,7 @@ export const LessonViewer = ({ modules, quiz, onQuizComplete }: LessonViewerProp
             <div className="text-center">
               <button
                 onClick={onQuizComplete}
-                className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-8 py-4 rounded-xl font-bold hover:shadow-xl transition-smooth hover:scale-105 inline-block"
+                className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-8 py-4 rounded-xl font-bold hover:shadow-2xl transition-smooth hover:scale-110 inline-block"
               >
                 ✅ Concluído com Sucesso
               </button>
@@ -178,7 +178,7 @@ export const LessonViewer = ({ modules, quiz, onQuizComplete }: LessonViewerProp
           <button
             onClick={handleSubmitQuiz}
             disabled={quizAnswers.filter((a) => a !== -1).length < totalQuestions}
-            className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-8 py-4 rounded-xl font-bold hover:shadow-xl disabled:opacity-50 disabled:cursor-not-allowed transition-smooth hover:scale-105 disabled:hover:scale-100 inline-block"
+            className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-8 py-4 rounded-xl font-bold hover:shadow-2xl disabled:opacity-50 disabled:cursor-not-allowed transition-smooth hover:scale-110 disabled:hover:scale-100 inline-block"
           >
             Enviar Quiz
           </button>
@@ -244,7 +244,7 @@ export const LessonViewer = ({ modules, quiz, onQuizComplete }: LessonViewerProp
 
         <button
           onClick={handleNextLesson}
-          className="px-6 py-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-xl font-semibold hover:shadow-lg transition-smooth hover:scale-105"
+          className="px-6 py-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-xl font-semibold hover:shadow-xl transition-smooth hover:scale-110"
         >
           {isLastLesson && isLastModule ? 'Iniciar Quiz →' : 'Próxima →'}
         </button>

@@ -46,7 +46,7 @@ export const CoursePage = () => {
       <div className="max-w-4xl mx-auto px-4 py-8">
         <button
           onClick={() => navigate('/')}
-          className="mb-8 px-4 py-2 text-blue-600 hover:bg-blue-100 rounded-xl transition-smooth font-semibold flex items-center gap-2 hover:scale-105"
+          className="mb-8 px-4 py-2 text-blue-600 hover:bg-blue-100 rounded-xl transition-smooth font-semibold flex items-center gap-2 hover:scale-110"
         >
           ← Voltar para Dashboard
         </button>
